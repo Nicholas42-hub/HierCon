@@ -219,38 +219,25 @@ This research was supported by:
 - Korea Planning & Evaluation Institute of Industrial Technology (KEIT) funded by the Ministry of Trade, Industry and Energy (No.RS-2025-25458052, Development of Core Technologies for Manufacturing Foundation Models)
 - Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government(MSIT) (No.RS-2025-02217259, Development of self-evolving AI bias detection-correction-explain platform based on international multidisciplinary governance)
 
-The ASVspoof 2019 dataset, which can can be downloaded from here.
+## Dataset Downloads
 
-The ASVspoof 2021 database is released on the zenodo site.
+- **ASVspoof 2019 LA**: [Download link](https://www.asvspoof.org/)
+- **ASVspoof 2021 LA**: [Download link](https://zenodo.org/record/4837263)
+- **ASVspoof 2021 DF**: [Download link](https://zenodo.org/record/4835108)
+- **In-the-Wild**: [Download link](https://www.asvspoof.org/index2021.html)
+- **Keys and metadata**: [Download link](https://www.asvspoof.org/index2021.html)
 
-LA here
+## Computing EER Scores
 
-DF here
+After generating score files, compute EER metrics using the official evaluation scripts:
 
-The In-the-Wild dataset can be downloaded from here
+```bash
+# Evaluate DF track
+python evaluate_2021_DF.py scores/scores_DF.txt ./keys eval
 
-For ASVspoof 2021 dataset keys (labels) and metadata are available here
-
-CUDA_VISIBLE_DEVICES=0 python main.py --track=DF --is_eval --eval
---model_path=/path/to/your/best_model.pth
---protocols_path=database/ASVspoof_DF_cm_protocols/ASVspoof2021.DF.cm.eval.trl.txt
---database_path=/path/to/your/ASVspoof2021_DF_eval/
---eval_output=/path/to/your/scores_DF.txt
-
-CUDA_VISIBLE_DEVICES=0 python main.py --track=LA --is_eval --eval
---model_path=/path/to/your/best_model.pth
---protocols_path=database/ASVspoof_DF_cm_protocols/ASVspoof2021.LA.cm.eval.trl.txt
---database_path=/path/to/your/ASVspoof2021_LA_eval/
---eval_output=/path/to/your/scores_LA.txt
-
-CUDA_VISIBLE_DEVICES=0 python main.py --track=In-the-Wild --is_eval --eval
---model_path=/path/to/your/best_model.pth
---protocols_path=database/ASVspoof_DF_cm_protocols/in_the_wild.eval.txt
---database_path=/path/to/your/release_in_the_wild/
---eval_output=/path/to/your/scores_In-the-Wild.txt
-
-                                        python evaluate_2021_DF.py scores/scores_DF.txt ./keys eval
-
+# Evaluate LA track
 python evaluate_2021_LA.py scores/scores_LA.txt ./keys eval
 
+# Evaluate In-the-Wild track
 python evaluate_in_the_wild.py scores/scores_Wild.txt ./keys eval
+```

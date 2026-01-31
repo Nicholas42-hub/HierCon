@@ -1,6 +1,6 @@
 # <div align="center">HierCon: Hierarchical Contrastive Attention</br>for Audio Deepfake Detection</div>
 
-### <div align="center">[Nicholas Liang](https://github.com/nicholas-liang), [Soyeon Caren Han](https://scholar.google.com/citations?user=VH2jVOgAAAAJ), Mike Wang, [Christopher Leckie](https://scholar.google.com/citations?user=0vPWOQcAAAAJ)</div>
+### <div align="center">[Nicholas Liang](https://github.com/nicholas-liang), [Soyeon Caren Han](https://scholar.google.com/citations?user=VH2jVOgAAAAJ), Mike Wang, [Christopher Leckie](https://scholar.google.com/citations?user=wUsI0cAAAAAJ&hl=en)</div>
 
 #### <div align="center">Accepted at The Web Conference 2026 (WWW'26)
 
